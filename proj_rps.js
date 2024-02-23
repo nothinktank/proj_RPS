@@ -16,8 +16,8 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  const p = playerSelection;
-  const c = computerSelection;
+  const p = playerSelection.toLowerCase();
+  const c = computerSelection.toLowerCase();
   
   if (p === "rock" && c === "rock") {
     console.log ("its a tie!");
@@ -41,7 +41,7 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-const playerSelection = "pAper";
+const playerSelection = "scissorS";
 console.log(playerSelection);
 const computerSelection = getComputerChoice();
 console.log(computerSelection);
