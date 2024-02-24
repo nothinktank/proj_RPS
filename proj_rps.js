@@ -1,6 +1,4 @@
 
-
-
 function getComputerChoice() {
   const getRandomNumber = Math.floor(Math.random() * 3);
   
@@ -11,10 +9,7 @@ function getComputerChoice() {
   }else{
     return "scissors";
   }
-
 }
-
-let result = 0;
 
 function playRound(playerSelection, computerSelection) {
   const p = playerSelection.toLowerCase();
@@ -23,41 +18,34 @@ function playRound(playerSelection, computerSelection) {
 
   if (p === "rock" && c === "rock") {
     console.log ("its a tie!");
-    return result = 0;
+    return 0;
   }else if (p === "rock" && c === "paper"){
     console.log ("you lose!");
-    return result = -1;
+    return -1;
   }else if (p === "rock" && c === "scissors"){
     console.log ("you win!");
-    return result = 1;
+    return 1;
   }else if (p === "paper" && c === "rock"){
     console.log ("you win!");
-    return result = 1;
+    return 1;
   }else if (p === "paper" && c === "paper"){
     console.log ("its a tie!");
-    return result = 0;
+    return 0;
   }else if (p === "paper" && c === "scissors"){
     console.log ("you lose!");
-    return result = -1;
+    return -1;
   }else if (p === "scissors" && c === "rock"){
     console.log ("you lose!");
-    return result = -1;
+    return -1;
   }else if (p === "scissors" && c === "paper"){
     console.log ("you win!");
-    return result = 1;
+    return 1;
   }else{
     console.log ("its a tie!");
-    return result = 0;
+    return 0;
   }
 
 }
-/*
-const playerSelection = "scissorS";
-console.log(playerSelection);
-const computerSelection = getComputerChoice();
-console.log(computerSelection);
-playRound(playerSelection,computerSelection);
-*/
 
 function playGame() {
   let playerWins = 0;
@@ -68,8 +56,7 @@ function playGame() {
     let computerPick = getComputerChoice();
     console.log(computerPick);
     
-
-    playRound(playerPick, computerPick);
+    let result = playRound(playerPick, computerPick);
      console.log(result);
 
     if (result === 0) {
