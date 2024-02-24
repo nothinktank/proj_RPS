@@ -39,10 +39,9 @@ function playGame() {
   for (let n = 1; n <= 5; n++){
     let playerPick = prompt("rock, paper, or scissors?");
     let computerPick = getComputerChoice();
-    console.log(computerPick);
+    console.log("player:", playerPick, "computer:",computerPick);
     
     let result = playRound(playerPick, computerPick);
-     console.log(result);
 
     if (result === 0) {
       console.log("No change in score");
