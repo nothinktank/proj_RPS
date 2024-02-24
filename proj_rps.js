@@ -45,13 +45,13 @@ function playGame() {
      console.log(result);
 
     if (result === 0) {
-      console.log("tie")
+      console.log("No change in score");
     }else if (result === 1) {
-      console.log("player wins")
-      playerWins ++; 
+      playerWins = playerWins + result;
+      console.log("player:", playerWins, "computer:", computerWins);
     }else {
-      console.log("computer wins")
-      computerWins ++;
+      computerWins = computerWins + -result;
+      console.log("player:", playerWins, "computer:", computerWins);
     };
   };
  
