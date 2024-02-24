@@ -14,35 +14,20 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
   const p = playerSelection.toLowerCase();
   const c = computerSelection.toLowerCase();
-  
 
-  if (p === "rock" && c === "rock") {
-    console.log ("its a tie!");
-    return 0;
-  }else if (p === "rock" && c === "paper"){
-    console.log ("you lose!");
-    return -1;
-  }else if (p === "rock" && c === "scissors"){
-    console.log ("you win!");
-    return 1;
-  }else if (p === "paper" && c === "rock"){
-    console.log ("you win!");
-    return 1;
-  }else if (p === "paper" && c === "paper"){
-    console.log ("its a tie!");
-    return 0;
-  }else if (p === "paper" && c === "scissors"){
-    console.log ("you lose!");
-    return -1;
-  }else if (p === "scissors" && c === "rock"){
-    console.log ("you lose!");
-    return -1;
-  }else if (p === "scissors" && c === "paper"){
-    console.log ("you win!");
-    return 1;
-  }else{
-    console.log ("its a tie!");
-    return 0;
+  if (p === c){
+    return 0
+  } 
+
+  switch (c) {
+    case "rock":
+      return p === "scissors" ? -1 : 1;
+    case "paper":
+      return p === "rock" ? -1 : 1;
+    case "scissors":
+      return p === "paper" ? -1 : 1;
+      default:
+        return 0;
   }
 
 }
