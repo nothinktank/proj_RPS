@@ -23,7 +23,7 @@ let playerScore = document.querySelector("#playerPoints");
 let computerScore = document.querySelector("#computerPoints");
 let roundResults = document.querySelector("#roundResult");
 
-let finalResults = document.createElement("div");
+let finalResults = document.querySelector("#final");
 
 /*
 rockButton.addEventListener("click", ()=>{ console.log("rock has been clicked");
@@ -36,34 +36,32 @@ let totalComputerPoints = 0;
 rockButton.addEventListener("click", ()=>{
   playRound(rockButton.textContent, getComputerChoice());
   console.log(`this is round ${++totalRoundsPlayed}`);
-  
+  //finalResults.textContent = ``
 } );
 
 paperButton.addEventListener("click", ()=>{
   playRound(paperButton.textContent, getComputerChoice())
   console.log(`this is round ${++totalRoundsPlayed}`);
-  
+  //finalResults.textContent = ``
 });
 scissorsButton.addEventListener("click", ()=>{
   playRound(scissorsButton.textContent, getComputerChoice())
   console.log(`this is round ${++totalRoundsPlayed}`);
+  //finalResults.textContent = ``
 });
 
 
 function playRound(playerSelection, computerSelection) {
   const p = playerSelection.toLowerCase();
   const c = computerSelection.toLowerCase();
-
-  
-  
 console.log(`you chose ${p}`);
 console.log(`computer chose ${c}`);
+
   if (p === c){
     console.log("its a tie")
     roundResults.textContent = "its a tie";
 return
   }
-  
   switch (c) {
     case "rock":
       if (p === "scissors") {
@@ -73,6 +71,7 @@ return
         playerScore.textContent = `${++totalPlayerPoints}`
         roundResults.textContent = "you win";
       }
+      resultTest();
       return
     case "paper":
       if (p === "rock") {
@@ -82,6 +81,7 @@ return
         playerScore.textContent = `${++totalPlayerPoints}`
         roundResults.textContent = "you win";
       }
+      resultTest();
       return
     case "scissors":
       if (p === "paper") {
@@ -91,10 +91,28 @@ return
         playerScore.textContent = `${++totalPlayerPoints}`
         roundResults.textContent = "you win";
       }      
+      resultTest();
       return
       default:
         return 0;
   }
+}
+   function resultTest(){
+    if (totalPlayerPoints > 4){
+      finalResults.textContent = "you hit 5 first!"
+      totalComputerPoints = 0;
+      totalPlayerPoints = 0;
+      computerScore.textContent = ``
+      playerScore.textContent = ``
+    }else if (totalComputerPoints > 4){
+      finalResults.textContent = "computer hits 5 first!"
+      totalComputerPoints = 0;
+      totalPlayerPoints = 0;
+      computerScore.textContent = ``
+      playerScore.textContent = ``
+    } 
+   }
+  
   
 /*
   else if (p === "rock" && c === "paper"){
@@ -137,11 +155,7 @@ return
     return;
   }
   */
-}
-   
-  if (totalPlayerPoints === 5){
 
-  }
 
   /*
   switch (c) {
