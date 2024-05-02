@@ -103,66 +103,7 @@ return
       playerScore.textContent = ``
     } 
    }
-  
-  
-/*
-  else if (p === "rock" && c === "paper"){
-    console.log("you lose");
-    roundResults.textContent = "you lose";
-    computerScore.textContent = `${++totalComputerPoints}`;
-  } else if (p === "rock" && c === "scissors"){
-    console.log("you win");
-    roundResults.textContent = "you win";
-    playerScore.textContent = `${++totalPlayerPoints}`;
-  } else if (p === "paper" && c === "rock"){
-    console.log("you win");
-    roundResults.textContent = "you win";
-    playerScore.textContent = `${++totalPlayerPoints}`;
-  }else if (p === "paper" && c === "scissors"){
-    console.log("you lose");
-    roundResults.textContent = "you lose";
-    computerScore.textContent = `${++totalComputerPoints}`;
-  }else if (p === "scissors" && c === "paper"){
-    console.log("you win");
-    roundResults.textContent = "you win";
-    playerScore.textContent = `${++totalPlayerPoints}`;
-  }else if (p === "scissors" && c === "rock"){
-    console.log("you lose");
-    roundResults.textContent = "you lose";
-    computerScore.textContent = `${++totalComputerPoints}`;
-  }
-*/
-  
-  /*
-  if (result.textContent === "you win") {
-      ++playerPoints ;
-      playerScoreBoard.textContent += `${playerPoints}`;
-      console.log(`player has ${playerPoints} points and computer has ${computerPoints} points`)
-  }else if (result.textContent === "you lose"){
-      ++computerPoints ;
-      console.log(`player has ${playerPoints} points and computer has ${computerPoints} points`)
 
-  }else {
-    return;
-  }
-  */
-
-
-  /*
-  switch (c) {
-    case "rock":
-      return p === "scissors" ? -1 : 1;
-      
-    case "paper":
-      return p === "rock" ? -1 : 1;
-      
-    case "scissors":
-      return p === "paper" ? -1 : 1;
-      
-      default:
-        return 0;
-  }
-*/
 
 /*
 function playGame() {
