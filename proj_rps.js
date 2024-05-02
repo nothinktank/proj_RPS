@@ -21,17 +21,20 @@ let roundResults = document.querySelector("#results")
 rockButton.addEventListener("click", ()=>{ console.log("rock has been clicked");
 });
 */
-
+let totalRoundsPlayed = 0;
 
 rockButton.addEventListener("click", ()=>{
   playRound(rockButton.textContent, getComputerChoice());
+  console.log(`this is round ${++totalRoundsPlayed}`);
 } );
 
 paperButton.addEventListener("click", ()=>{
   playRound(paperButton.textContent, getComputerChoice())
+  console.log(`this is round ${++totalRoundsPlayed}`);
 });
 scissorsButton.addEventListener("click", ()=>{
   playRound(scissorsButton.textContent, getComputerChoice())
+  console.log(`this is round ${++totalRoundsPlayed}`);
 });
 
 
@@ -87,7 +90,8 @@ function playGame() {
   let computerWins = 0;
   
   for (let n = 1; n <= 5; n++){
-    let playerPick = prompt("rock, paper, or scissors?");
+    let playerPick = 
+    //let playerPick = prompt("rock, paper, or scissors?");
     let computerPick = getComputerChoice();
     console.log("player:", playerPick, "computer:",computerPick);
     
@@ -114,5 +118,4 @@ function playGame() {
 }
 
 playGame();
-
 */
