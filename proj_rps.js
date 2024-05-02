@@ -15,7 +15,6 @@ let rockButton = document.querySelector("#rock");
 let paperButton = document.querySelector("#paper");
 let scissorsButton = document.querySelector("#scissors");
 
-//let roundResults = document.querySelector("#results")
 let playerScoreBoard = document.querySelector("#p_score");
 let computerScoreBoard = document.querySelector("#c_score");
 
@@ -25,10 +24,6 @@ let roundResults = document.querySelector("#roundResult");
 
 let finalResults = document.querySelector("#final");
 
-/*
-rockButton.addEventListener("click", ()=>{ console.log("rock has been clicked");
-});
-*/
 let totalRoundsPlayed = 0;
 let totalPlayerPoints = 0;
 let totalComputerPoints = 0;
@@ -36,18 +31,16 @@ let totalComputerPoints = 0;
 rockButton.addEventListener("click", ()=>{
   playRound(rockButton.textContent, getComputerChoice());
   console.log(`this is round ${++totalRoundsPlayed}`);
-  
 } );
 
 paperButton.addEventListener("click", ()=>{
   playRound(paperButton.textContent, getComputerChoice())
   console.log(`this is round ${++totalRoundsPlayed}`);
-  
 });
+
 scissorsButton.addEventListener("click", ()=>{
   playRound(scissorsButton.textContent, getComputerChoice())
   console.log(`this is round ${++totalRoundsPlayed}`);
-  
 });
 
 
@@ -71,8 +64,7 @@ return
         playerScore.textContent = `${++totalPlayerPoints}`
         roundResults.textContent = "you win";
       }
-      resultTest();
-      return
+      break
     case "paper":
       if (p === "rock") {
         computerScore.textContent = `${++totalComputerPoints}`
@@ -81,8 +73,7 @@ return
         playerScore.textContent = `${++totalPlayerPoints}`
         roundResults.textContent = "you win";
       }
-      resultTest();
-      return
+      break
     case "scissors":
       if (p === "paper") {
         computerScore.textContent = `${++totalComputerPoints}`
@@ -91,11 +82,11 @@ return
         playerScore.textContent = `${++totalPlayerPoints}`
         roundResults.textContent = "you win";
       }      
-      resultTest();
-      return
+      break
       default:
-        return 0;
+        break;
   }
+  resultTest();
 }
    function resultTest(){
     if (totalPlayerPoints > 4){
