@@ -15,26 +15,34 @@ let rockButton = document.querySelector("#rock");
 let paperButton = document.querySelector("#paper");
 let scissorsButton = document.querySelector("#scissors");
 
-let roundResults = document.querySelector("#results")
+//let roundResults = document.querySelector("#results")
 let playerScoreBoard = document.querySelector("#p_score");
 let computerScoreBoard = document.querySelector("#c_score");
+
+let playerScore = document.querySelector("#playerPoints");
+let computerScore = document.querySelector("#computerPoints");
+let roundResults = document.querySelector("#roundResult");
+
+let finalResults = document.createElement("div");
 
 /*
 rockButton.addEventListener("click", ()=>{ console.log("rock has been clicked");
 });
 */
 let totalRoundsPlayed = 0;
-let playerPoints = 0;
-let computerPoints = 0;
+let totalPlayerPoints = 0;
+let totalComputerPoints = 0;
 
 rockButton.addEventListener("click", ()=>{
   playRound(rockButton.textContent, getComputerChoice());
   console.log(`this is round ${++totalRoundsPlayed}`);
+  
 } );
 
 paperButton.addEventListener("click", ()=>{
   playRound(paperButton.textContent, getComputerChoice())
   console.log(`this is round ${++totalRoundsPlayed}`);
+  
 });
 scissorsButton.addEventListener("click", ()=>{
   playRound(scissorsButton.textContent, getComputerChoice())
@@ -45,34 +53,38 @@ scissorsButton.addEventListener("click", ()=>{
 function playRound(playerSelection, computerSelection) {
   const p = playerSelection.toLowerCase();
   const c = computerSelection.toLowerCase();
-  let result = document.createElement("div");
+
+  
+  
 console.log(`you chose ${p}`);
 console.log(`computer chose ${c}`);
   if (p === c){
     console.log("its a tie")
-    result.textContent = "its a tie";
+    roundResults.textContent = "its a tie";
   } else if (p === "rock" && c === "paper"){
     console.log("you lose");
-    result.textContent = "you lose";
+    roundResults.textContent = "you lose";
   } else if (p === "rock" && c === "scissors"){
     console.log("you win");
-    result.textContent = "you win";
+    roundResults.textContent = "you win";
   } else if (p === "paper" && c === "rock"){
     console.log("you win");
-    result.textContent = "you win";
+    roundResults.textContent = "you win";
   }else if (p === "paper" && c === "scissors"){
     console.log("you lose");
-    result.textContent = "you lose";
+    roundResults.textContent = "you lose";
   }else if (p === "scissors" && c === "paper"){
     console.log("you win");
-    result.textContent = "you win";
+    roundResults.textContent = "you win";
   }else if (p === "scissors" && c === "rock"){
     console.log("you lose");
-    result.textContent = "you lose";
+    roundResults.textContent = "you lose";
   }
-  roundResults.appendChild(result);
+  //roundResults.appendChild(result);
+  /*
   if (result.textContent === "you win") {
       ++playerPoints ;
+      playerScoreBoard.textContent += `${playerPoints}`;
       console.log(`player has ${playerPoints} points and computer has ${computerPoints} points`)
   }else if (result.textContent === "you lose"){
       ++computerPoints ;
@@ -81,9 +93,11 @@ console.log(`computer chose ${c}`);
   }else {
     return;
   }
+  */
+}
    
-  if (playerPoints === 5 || computerPoints === 5){
-    let finalResults = document.createElement("div");
+  if (totalPlayerPoints === 5){
+
   }
 
   /*
