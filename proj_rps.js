@@ -16,12 +16,16 @@ let paperButton = document.querySelector("#paper");
 let scissorsButton = document.querySelector("#scissors");
 
 let roundResults = document.querySelector("#results")
+let playerScoreBoard = document.querySelector("#p_score");
+let computerScoreBoard = document.querySelector("#c_score");
 
 /*
 rockButton.addEventListener("click", ()=>{ console.log("rock has been clicked");
 });
 */
 let totalRoundsPlayed = 0;
+let playerPoints = 0;
+let computerPoints = 0;
 
 rockButton.addEventListener("click", ()=>{
   playRound(rockButton.textContent, getComputerChoice());
@@ -67,6 +71,20 @@ console.log(`computer chose ${c}`);
     result.textContent = "you lose";
   }
   roundResults.appendChild(result);
+  if (result.textContent === "you win") {
+      ++playerPoints ;
+      console.log(`player has ${playerPoints} points and computer has ${computerPoints} points`)
+  }else if (result.textContent === "you lose"){
+      ++computerPoints ;
+      console.log(`player has ${playerPoints} points and computer has ${computerPoints} points`)
+
+  }else {
+    return;
+  }
+   
+  if (playerPoints === 5 || computerPoints === 5){
+    let finalResults = document.createElement("div");
+  }
 
   /*
   switch (c) {
@@ -83,7 +101,7 @@ console.log(`computer chose ${c}`);
         return 0;
   }
 */
-}
+
 /*
 function playGame() {
   let playerWins = 0;
