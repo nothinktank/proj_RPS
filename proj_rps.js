@@ -61,24 +61,31 @@ console.log(`computer chose ${c}`);
   if (p === c){
     console.log("its a tie")
     roundResults.textContent = "its a tie";
+
   } else if (p === "rock" && c === "paper"){
     console.log("you lose");
     roundResults.textContent = "you lose";
+    computerScore.textContent = `${++totalComputerPoints}`;
   } else if (p === "rock" && c === "scissors"){
     console.log("you win");
     roundResults.textContent = "you win";
+    playerScore.textContent = `${++totalPlayerPoints}`;
   } else if (p === "paper" && c === "rock"){
     console.log("you win");
     roundResults.textContent = "you win";
+    playerScore.textContent = `${++totalPlayerPoints}`;
   }else if (p === "paper" && c === "scissors"){
     console.log("you lose");
     roundResults.textContent = "you lose";
+    computerScore.textContent = `${++totalComputerPoints}`;
   }else if (p === "scissors" && c === "paper"){
     console.log("you win");
     roundResults.textContent = "you win";
+    playerScore.textContent = `${++totalPlayerPoints}`;
   }else if (p === "scissors" && c === "rock"){
     console.log("you lose");
     roundResults.textContent = "you lose";
+    computerScore.textContent = `${++totalComputerPoints}`;
   }
   //roundResults.appendChild(result);
   /*
