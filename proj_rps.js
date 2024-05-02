@@ -11,27 +11,77 @@ function getComputerChoice() {
   }
 }
 
+let rockButton = document.querySelector("#rock");
+let paperButton = document.querySelector("#paper");
+let scissorsButton = document.querySelector("#scissors");
+
+let roundResults = document.querySelector("#results")
+
+/*
+rockButton.addEventListener("click", ()=>{ console.log("rock has been clicked");
+});
+*/
+
+
+rockButton.addEventListener("click", ()=>{
+  playRound(rockButton.textContent, getComputerChoice());
+} );
+
+paperButton.addEventListener("click", ()=>{
+  playRound(paperButton.textContent, getComputerChoice())
+});
+scissorsButton.addEventListener("click", ()=>{
+  playRound(scissorsButton.textContent, getComputerChoice())
+});
+
+
 function playRound(playerSelection, computerSelection) {
   const p = playerSelection.toLowerCase();
   const c = computerSelection.toLowerCase();
-
+  let result = document.createElement("div");
+console.log(`you chose ${p}`);
+console.log(`computer chose ${c}`);
   if (p === c){
-    return 0
-  } 
+    console.log("its a tie")
+    result.textContent = "its a tie";
+  } else if (p === "rock" && c === "paper"){
+    console.log("you lose");
+    result.textContent = "you lose";
+  } else if (p === "rock" && c === "scissors"){
+    console.log("you win");
+    result.textContent = "you win";
+  } else if (p === "paper" && c === "rock"){
+    console.log("you win");
+    result.textContent = "you win";
+  }else if (p === "paper" && c === "scissors"){
+    console.log("you lose");
+    result.textContent = "you lose";
+  }else if (p === "scissors" && c === "paper"){
+    console.log("you win");
+    result.textContent = "you win";
+  }else if (p === "scissors" && c === "rock"){
+    console.log("you lose");
+    result.textContent = "you lose";
+  }
+  roundResults.appendChild(result);
 
+  /*
   switch (c) {
     case "rock":
       return p === "scissors" ? -1 : 1;
+      
     case "paper":
       return p === "rock" ? -1 : 1;
+      
     case "scissors":
       return p === "paper" ? -1 : 1;
+      
       default:
         return 0;
   }
-
+*/
 }
-
+/*
 function playGame() {
   let playerWins = 0;
   let computerWins = 0;
@@ -64,3 +114,5 @@ function playGame() {
 }
 
 playGame();
+
+*/
