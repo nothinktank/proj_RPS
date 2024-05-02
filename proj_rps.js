@@ -36,18 +36,18 @@ let totalComputerPoints = 0;
 rockButton.addEventListener("click", ()=>{
   playRound(rockButton.textContent, getComputerChoice());
   console.log(`this is round ${++totalRoundsPlayed}`);
-  //finalResults.textContent = ``
+  
 } );
 
 paperButton.addEventListener("click", ()=>{
   playRound(paperButton.textContent, getComputerChoice())
   console.log(`this is round ${++totalRoundsPlayed}`);
-  //finalResults.textContent = ``
+  
 });
 scissorsButton.addEventListener("click", ()=>{
   playRound(scissorsButton.textContent, getComputerChoice())
   console.log(`this is round ${++totalRoundsPlayed}`);
-  //finalResults.textContent = ``
+  
 });
 
 
@@ -56,7 +56,7 @@ function playRound(playerSelection, computerSelection) {
   const c = computerSelection.toLowerCase();
 console.log(`you chose ${p}`);
 console.log(`computer chose ${c}`);
-
+finalResults.textContent = ``;
   if (p === c){
     console.log("its a tie")
     roundResults.textContent = "its a tie";
